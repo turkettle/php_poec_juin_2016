@@ -1,9 +1,5 @@
 <?php
 
-// print '<pre>';
-// print_r($users);
-// print '</pre>';
-
 $users = array(
 	0 => array(
 		'id' => '1',
@@ -36,6 +32,7 @@ $markup .= '<thead> <tr> <th>#</th> <th>Name</th> <th>Email</th> <th>Rôles</th>
 $markup .= '<tbody>';
 
 foreach($users as $user) {
+
 	$markup .= '<tr>';
 	$markup .= generate_user_row($user);
 	$markup .= '</tr>';
@@ -53,15 +50,29 @@ function generate_user_row($user) {
 	$row = '<th scope="row">' . $user['id'] . '</th>';
 	$row .= '<td>' . $user['name'] . '</td>';
 	$row .= '<td>' . $user['mail'] . '</td>';
-	$row .= '<td>';
-
-	foreach ($user['role'] as $role) {
-		$row .= $role . ', ';
-	}
-
-	$row .= '</td>';
+	$row .= generate_role_cell($user['role']);
+	// $row .= '<td>' . implode(', ', $user['role']) . '</td>';
 
 	return $row;
+}
+
+function generate_role_cell($roles) {
+
+	$cell = '<td>';
+
+	$nb = count($roles);
+
+	for ($i = 0; $i < $nb; $i++) {
+
+		if ($i) {
+			$cell .= ', ';
+		}
+		$cell .= $roles[$i];
+	}
+
+	$cell .= '</td>';
+
+	return $cell;
 }
 
 ?>
