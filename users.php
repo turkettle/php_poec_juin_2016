@@ -32,7 +32,7 @@ $users = array(
 );
 
 $markup = '<table class="table table-hover">';
-$markup .= '<thead> <tr> <th>#</th> <th>Name</th> <th>Email</th></tr> </thead>';
+$markup .= '<thead> <tr> <th>#</th> <th>Name</th> <th>Email</th> <th>Rôles</th></tr> </thead>';
 $markup .= '<tbody>';
 
 foreach($users as $user) {
@@ -50,7 +50,18 @@ print $markup;
 
 function generate_user_row($user) {
 
-	return '<th scope="row">' . $user['id'] . '</th><td>' . $user['name'] . '</td><td>' . $user['mail'] . '</td>';
+	$row = '<th scope="row">' . $user['id'] . '</th>';
+	$row .= '<td>' . $user['name'] . '</td>';
+	$row .= '<td>' . $user['mail'] . '</td>';
+	$row .= '<td>';
+
+	foreach ($user['role'] as $role) {
+		$row .= $role . ', ';
+	}
+
+	$row .= '</td>';
+
+	return $row;
 }
 
 ?>
