@@ -49,7 +49,7 @@
 	<div class="container">
 		<div class="well">
 			<?php
-			include 'users.php';
+				include 'modules/user/users.php';
 			?>
 		</div>
 		<hr>
