@@ -49,7 +49,8 @@
 	<div class="container">
 		<div class="well">
 			<?php
-				include 'modules/user/users.php';
+				// include 'modules/user/users.php';
+				include 'modules/user/form/user_create_form.html.php';
 			?>
 		</div>
 		<hr>

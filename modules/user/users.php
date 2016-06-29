@@ -1,4 +1,7 @@
 <?php
+	// print '<pre>';
+	// print_r($_POST);
+	// print '</pre>';
 
 $users_db = array(
 	array(
@@ -39,7 +42,7 @@ foreach ($users_db as $user_db) {
 	);
 }
 
-include_once 'users.html.php';
+include_once 'views/users.html.php';
 
 
 /*		FUNCTIONS 		*/
