@@ -50,7 +50,7 @@
 		<div class="well">
 			<?php
 				// include 'modules/user/users.php';
-				include 'modules/user/form/user_create_form.html.php';
+				include 'modules/user/user_edit.php';
 			?>
 		</div>
 		<hr>
