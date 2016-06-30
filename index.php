@@ -1,3 +1,4 @@
+<?php session_start() ?>
 <!doctype html>
 <html class="no-js" lang="">
 <head>
@@ -33,18 +34,24 @@
 				<a class="navbar-brand" href="#">Project name</a>
 			</div>
 			<div id="navbar" class="navbar-collapse collapse">
-				<form class="navbar-form navbar-right" role="form">
+				<form action="modules/user/form/user_login_form.php" method="post" class="navbar-form navbar-right" role="form">
 					<div class="form-group">
-						<input type="text" placeholder="Email" class="form-control">
+						<input name="email" type="text" placeholder="Email" class="form-control">
 					</div>
 					<div class="form-group">
-						<input type="password" placeholder="Password" class="form-control">
+						<input name="password" type="password" placeholder="Password" class="form-control">
 					</div>
 					<button type="submit" class="btn btn-success">Sign in</button>
 				</form>
 			</div><!--/.navbar-collapse -->
 		</div>
 	</nav>
+
+	<?php if (isset($_SESSION['message'])): ?>
+		<div class="container message">
+			<?php include 'core/message/display_messages.php'; ?>
+		</div>
+	<?php endif; ?>
 
 	<div class="container">
 		<div class="well">
