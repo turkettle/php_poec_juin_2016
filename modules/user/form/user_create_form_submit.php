@@ -1,8 +1,4 @@
 <?php
-
-	print '<pre>';
-	print_r($_POST);
-	print '</pre>';
 	// print_r($st->errorInfo());
 
 	// Si le mot de passe n'est pas vide et que les 2 mots de passe correspondent,
@@ -61,16 +57,6 @@
 	}
 	else {
 		print 'Vos mot de passe ne correspondent pas !';
-	}
-
-	function user_exists($email) {
-
-		$db = new PDO('mysql:host=localhost;dbname=php', 'root', 'paris');
-
-		$query = $db->prepare('SELECT * FROM user WHERE email=:email');
-		$query->bindValue(':email', $email);
-		$query->execute();
-		return $query->fetch(PDO::FETCH_ASSOC);
 	}
 
 
