@@ -1,4 +1,5 @@
-<?php session_start() ?>
+<?php session_start(); ?>
+<?php include 'modules/user/user.api.php'; ?>
 <!doctype html>
 <html class="no-js" lang="">
 <head>
@@ -24,6 +25,7 @@
 <body>
 	<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation">
 		<div class="container">
+
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
 					<span class="sr-only">Toggle navigation</span>
@@ -33,17 +35,9 @@
 				</button>
 				<a class="navbar-brand" href="#">Project name</a>
 			</div>
-			<div id="navbar" class="navbar-collapse collapse">
-				<form action="modules/user/form/user_login_form.php" method="post" class="navbar-form navbar-right" role="form">
-					<div class="form-group">
-						<input name="email" type="text" placeholder="Email" class="form-control">
-					</div>
-					<div class="form-group">
-						<input name="password" type="password" placeholder="Password" class="form-control">
-					</div>
-					<button type="submit" class="btn btn-success">Sign in</button>
-				</form>
-			</div><!--/.navbar-collapse -->
+
+			<?php include 'modules/user/form/login_form.html.php'; ?>
+
 		</div>
 	</nav>
 
