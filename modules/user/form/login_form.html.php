@@ -12,4 +12,5 @@
 			</div>
 			<button type="submit" class="btn btn-success">Sign in</button>
 		</form>
-	</div><!--/.navba
+	</div>
+<?php endif; ?>
