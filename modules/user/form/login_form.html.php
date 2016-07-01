@@ -1,6 +1,8 @@
 
 <?php if (user_is_logged_in()): ?>
-	<a href="modules/user/user_logout.php" class="btn btn-danger navbar-brand pull-right">Sign out</a>
+	<div class="pull-right">
+		<a href="modules/user/user_logout.php" class="btn btn-danger">Sign out</a>
+	</div>
 <?php else : ?>
 	<div id="navbar" class="navbar-collapse collapse">
 		<form action="modules/user/form/user_login_form.php" method="post" class="navbar-form navbar-right" role="form">

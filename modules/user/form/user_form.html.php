@@ -25,7 +25,7 @@
 
 		<!-- Pour chaque rôle récupéré en BDD dans la variable $result_role
 		dans le script user_edit.php, on affiche une balise checkbox dans le formulaire. -->
-		<?php foreach ($result_role as $role) : ?>
+		<?php foreach ($result_roles as $role) : ?>
 
 			<!-- On pépare la variable $checked qui contiendra l'attribut
 			checked des balises checkbox. -->
